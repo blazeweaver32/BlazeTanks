@@ -11,7 +11,29 @@ TILE = 50
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 
+fontUI = pygame.font.Font(None, 30)
+
 DIRECTS = [[0, -1], [1, 0], [0, 1], [-1, 0]]
+
+
+class UI:
+    def __init__(self):
+        pass
+
+    def update(self):
+        pass
+
+    def draw(self):
+        i = 0
+        for obj in objects:
+            if obj.type == 'tank':
+                pygame.draw.rect(window, obj.color, (5 + i * 70, 5, 22, 22))
+                text = fontUI.render(str(obj.hp), 1, obj.color)
+                rect = text.get_rect(center = (5 + i * 70 + 32, 5 + 11))
+                window.blit(text, rect)
+                i += 1
+
+
 
 class Tank:
     def __init__(self, color, px, py, direct, keyList):
@@ -140,10 +162,12 @@ Tank('red', 650, 275, 0, (
                            pygame.K_DOWN,
                            pygame.K_KP_ENTER))
 
+ui = UI()
+
 for _ in range(35):
     while True:
         x = randint(0, WIDTH // TILE - 1) * TILE
-        y = randint(0, HEIGHT // TILE - 1) * TILE
+        y = randint(1, HEIGHT // TILE - 1) * TILE
 
         rect = pygame.Rect(x, y, TILE, TILE)
 
@@ -169,12 +193,15 @@ while play:
     for bullet in bullets: bullet.update()
     for obj in objects: obj.update()
 
+    ui.update()
 
     window.fill('black')
 
 
     for bullet in bullets: bullet.draw()
     for obj in objects: obj.draw()
+
+    ui.draw()
 
     pygame.display.update()
     clock.tick(FPS)
