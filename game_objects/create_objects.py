@@ -7,7 +7,8 @@ from game_objects.tank_logic import Tank
 
 
 def create():
-    Tank('Мишаня','blue', 100, 275, 0, (
+
+    Tank('Машулька','blue', 100, 275, 0, (
                                pygame.K_a,
                                pygame.K_d,
                                pygame.K_w,
@@ -15,7 +16,7 @@ def create():
                                pygame.K_SPACE))
 
 
-    Tank('Машка','red', 650, 275, 0, (
+    Tank('Мишаня','red', 650, 275, 0, (
                                pygame.K_LEFT,
                                pygame.K_RIGHT,
                                pygame.K_UP,

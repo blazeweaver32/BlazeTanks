@@ -15,14 +15,14 @@ class Tank:
         self.nickname = nickname
         self.rect = pygame.Rect(px, py, TILE, TILE)
         self.direct = direct
-        self.moveSpeed = 2
+        self.moveSpeed = 3
         self.hp = 5
 
         self.destroyed = False
 
         self.shotTimer = 0
         self.shotDelay = 60
-        self.bulletSpeed = 5
+        self.bulletSpeed = 7
         self.bulletDamage = 1
 
         self.keyLEFT = keyList[0]

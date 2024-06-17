@@ -7,5 +7,8 @@ DIRECTS = [[0, -1], [1, 0], [0, 1], [-1, 0]] #Список направлени�
 
 bullets = []
 objects = []
+buttons = []
 
 result_false = []
+
+game_start = False

@@ -20,3 +20,4 @@ imgBangsDestroyedTanks = [
 ]
 
 imgBackground = image.load("images/backroung.jpg")
+imgMainMenu = image.load("images/main_menu.jpg")
