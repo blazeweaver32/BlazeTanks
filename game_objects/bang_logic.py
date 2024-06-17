@@ -1,10 +1,14 @@
-from data.images_load import imgBangs
+import pygame
+
 from data.constants import objects
+from data.images_load import imgBangs, imgBangsDestroyedTanks
+
 
 class Bang:
-    def __init__(self, px, py):
+    def __init__(self, px, py, destroyed):
         objects.append(self)
         self.type = 'bang'
+        self.destroyed = destroyed
 
         self.px, self.py = px, py
         self.frame = 0
@@ -14,7 +18,11 @@ class Bang:
         if self.frame >= 3: objects.remove(self)
 
     def draw(self):
-        image = imgBangs[int(self.frame)]
+        if self.destroyed:
+            image = imgBangsDestroyedTanks[int(self.frame)]
+            image = pygame.transform.scale(image, (image.get_width() + 15, image.get_height() + 15))
+        else:
+            image = imgBangs[int(self.frame)]
         rect = image.get_rect(center = (self.px, self.py))
 
         from run import window

@@ -24,7 +24,7 @@ class Bullet:
                 if obj != self.parent and obj.type != 'bang' and obj.rect.collidepoint(self.px, self.py):
                     obj.damage(self.damage)
                     bullets.remove(self)
-                    Bang(self.px, self.py)
+                    Bang(self.px, self.py, False)
                     break
 
     def draw(self):

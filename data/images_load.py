@@ -13,4 +13,10 @@ imgBangs = [
     image.load("images/bang3.png"),
 ]
 
+imgBangsDestroyedTanks = [
+    image.load("images/bang_destroy_tank1.png"),
+    image.load("images/bang_destroy_tank2.png"),
+    image.load("images/bang_destroy_tank3.png"),
+]
+
 imgBackground = image.load("images/backroung.jpg")

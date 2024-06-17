@@ -1,8 +1,7 @@
 import pygame
 
+from data.constants import objects, result_false
 from data.images_load import imgBrick
-from data.constants import objects
-
 
 
 class Block:
@@ -14,7 +13,8 @@ class Block:
         self.hp = 1
 
     def update(self):
-        pass
+        if len(result_false) != 0:
+            objects.remove(self)
 
     def draw(self):
         from run import window

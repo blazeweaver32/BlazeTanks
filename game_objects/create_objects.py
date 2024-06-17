@@ -1,12 +1,13 @@
-from data.constants import WIDTH,HEIGHT, TILE, objects
-
-from game_objects.tank_logic import Tank
-
-import pygame
 from random import randint
 
-def create(keys):
-    Tank(keys, 'blue', 100, 275, 0, (
+import pygame
+
+from data.constants import WIDTH, HEIGHT, TILE, objects
+from game_objects.tank_logic import Tank
+
+
+def create():
+    Tank('Мишаня','blue', 100, 275, 0, (
                                pygame.K_a,
                                pygame.K_d,
                                pygame.K_w,
@@ -14,12 +15,12 @@ def create(keys):
                                pygame.K_SPACE))
 
 
-    Tank(keys, 'red', 650, 275, 0, (
+    Tank('Машка','red', 650, 275, 0, (
                                pygame.K_LEFT,
                                pygame.K_RIGHT,
                                pygame.K_UP,
                                pygame.K_DOWN,
-                               pygame.K_f))
+                               0))
 
 
     for _ in range(50):
