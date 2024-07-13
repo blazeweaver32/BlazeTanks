@@ -38,11 +38,6 @@ class UI:
                 Button("blue", 335, 400, 130, 30, "Играть снова", "white", "game_again"),
                 Button("red", 335, 360, 130, 30, "Выход", "white", "game_exit")
 
-                for button in buttons:
-                    button.update()
-                    button.draw()
-
-
             else:
                 for obj in objects:
                     if obj.type == 'tank':
@@ -61,6 +56,8 @@ class UI:
             option_name = fontUITitle.render("Настройки", 1, "white")
             rect_2 = option_name.get_rect(center=(400, 100))
             window.blit(option_name, rect_2)
+
+            Button("blue", 335, 285, 130, 30, "Поменять название игрока 1", "white", "game_start"),
         else:
             Button("blue", 335, 285, 130, 30, "Начать игру", "white", "game_start"),
             Button("blue", 335, 325, 130, 30, "Настройки", "white", "options_open"),
@@ -69,6 +66,6 @@ class UI:
 
             window.blit(imgMainMenu, (0, 0))
 
-            for button in buttons:
-                button.update()
-                button.draw()
+        for button in buttons:
+            button.update()
+            button.draw()
