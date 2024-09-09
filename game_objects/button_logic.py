@@ -5,7 +5,7 @@ from other_logic.json_logic import edit_json
 
 
 class Button:
-    def __init__(self, color, px,py, height, width, font_text, font_color, action):
+    def __init__(self, color, py,px, width, height, font_text, font_color, action):
         buttons.append(self)
         self.type = 'button'
         self.color = color
@@ -19,8 +19,8 @@ class Button:
 
     def update(self):
         from run import event_pygame
-        s_px = self.height + self.px
-        s_py = self.width + self.py
+        s_px = self.width + self.px
+        s_py = self.height + self.py
         for event in event_pygame:
             if event.type == pygame.MOUSEBUTTONUP:
                 pos = pygame.mouse.get_pos()
@@ -33,6 +33,10 @@ class Button:
                         edit_json("data/const.json", "game_start", "Exit")
                     elif self.action == "options_open":
                         edit_json("data/const.json", "game_start", "Options")
+                    elif self.action == "сhange_nickname:first_player":
+                        edit_json("data/const.json", "game_start", "ChangeNicknameFirstPlayer")
+                    elif self.action == "сhange_nickname:second_player":
+                        edit_json("data/const.json", "game_start", "ChangeNicknameSecondPlayer")
                     buttons.clear()
 
 
@@ -40,9 +44,9 @@ class Button:
     def draw(self):
             from run import window, fontUI
 
-            pygame.draw.rect(window, self.color, (self.px, self.py, self.height, self.width))
+            pygame.draw.rect(window, self.color, (self.px, self.py, self.width, self.height))
             title_game = fontUI.render(self.font_text, 1, self.font_color)
-            rect_2 = title_game.get_rect(center=((self.px+self.width+35), (self.height+self.py-115)))
+            rect_2 = title_game.get_rect(center=((self.px+(self.width/2)), (self.py+(self.height/2))))
             window.blit(title_game, rect_2)
 
 

@@ -4,11 +4,12 @@ import pygame
 
 from data.constants import WIDTH, HEIGHT, TILE, objects
 from game_objects.tank_logic import Tank
+from other_logic.json_logic import read_json
 
 
 def create():
-
-    Tank('Машулька','blue', 100, 275, 0, (
+    result = read_json("data/variable.json")
+    Tank(result['first_player'],'blue', 100, 275, 0, (
                                pygame.K_a,
                                pygame.K_d,
                                pygame.K_w,
@@ -16,7 +17,7 @@ def create():
                                pygame.K_SPACE))
 
 
-    Tank('Мишаня','red', 650, 275, 0, (
+    Tank(result['second_player'],'red', 650, 275, 0, (
                                pygame.K_LEFT,
                                pygame.K_RIGHT,
                                pygame.K_UP,

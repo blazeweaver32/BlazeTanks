@@ -13,6 +13,7 @@ clock = pygame.time.Clock() #Объект для отслеживания вре
 
 fontUI = pygame.font.Font(None, 30) #Загрузка шрифтов. None - шрифт по умолчанию, второй параметр -размер шрифта
 fontUITitle = pygame.font.Font(None, 72) #Загрузка шрифтов. None - шрифт по умолчанию, второй параметр -размер шрифта
+fontUIPreTitle = pygame.font.Font(None, 50) #Загрузка шрифтов. None - шрифт по умолчанию, второй параметр -размер шрифта
 
 
 
